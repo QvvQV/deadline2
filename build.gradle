@@ -21,12 +21,15 @@ dependencies {
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'com.codeborne:selenide:6.17.2'
     testImplementation 'io.rest-assured:rest-assured:4.2.0'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    implementation group: 'commons-dbutils', name: 'commons-dbutils', version: '1.7'
 }
 
 test {
     useJUnitPlatform()
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
     systemProperty 'db.url', System.getProperty('db.url',"jdbc:mysql://localhost:3306/app")
-    systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
+    //systemProperty 'chromeoptions.prefs', System.getProperty('chromeoptions.prefs', "profile.password_manager_leak_detection=false")
 
 }
